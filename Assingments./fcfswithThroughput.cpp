@@ -16,7 +16,7 @@ bool compare_arrival_time(Process p1, Process p2) {
     return p1.arrival_time < p2.arrival_time;
 }
 
-void print_table(Process processes[], int n, float avg_waiting_time, float avg_turnaround_time,float throughput,float CPU) {
+void print_table(Process processes[], int n, float avg_waiting_time, float avg_turnaround_time,float throughput,double CPU) {
     cout << "PID\tAT\tBT\tCT\tWT\tTAT" << endl;
     for (int i = 0; i < n; i++) {
         cout << processes[i].pid << "\t" << processes[i].arrival_time << "\t" << processes[i].burst_time << "\t" << processes[i].completion_time << "\t" << processes[i].waiting_time << "\t" << processes[i].turnaround_time << endl;
@@ -32,11 +32,14 @@ void print_table(Process processes[], int n, float avg_waiting_time, float avg_t
 }
 
 int sumofBT(int burst_time,int n)
-{
+{ int sum = 0;
     for(int i=0;i<n;i++)
     {
-        int sum=sum+burst_time;
+     sum=sum+burst_time;
+    
     }
+    cout<<sum<<endl;
+    return sum;
 }
 
 void fcfs_scheduling(Process processes[], int n) {
@@ -61,7 +64,7 @@ void fcfs_scheduling(Process processes[], int n) {
 
     float throughput = (float)n/current_time;
 
-    float CPU=(sumofBT(processes[n].burst_time, n)%current_time)*100;
+    double CPU=(sumofBT(processes[n].burst_time, n)/current_time)*100;
 
     print_table(processes, n, avg_waiting_time, avg_turnaround_time,throughput,CPU);
 }
