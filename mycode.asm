@@ -1,6 +1,4 @@
-
-; You may customize this and other start-up templates; 
-; The location of this template is c:\emu8086\inc\0_com_template.txt
+;Performing addition, subtraction, multiplication and move operation
 
 org 100h
 
@@ -9,6 +7,8 @@ MOV CX, 0001H;        //VALUE OF CX
 MOV [1234H], AX;    //ADDRESS WHERE VALUE IS STORED
 MOV [1236H], CX;
 ADD AX,CX;
+SUB AX,CX;
+MUL CX;
 HLT
 
 ret
