@@ -12,19 +12,23 @@ MOV DX,0100H;
 MOV BX,DX;   
 MOV AX,110FH;
 MOV AX,BX;
+
 ;Direct addressing mode
 MOV AL,[07H];
 MOV DL,[2400H];
+
 ;Register indirect addressing mode 
 MOV AX,[BX];  Physical address = [DS]*10+[BX];
 
 ;Based relative addressing mode 
 MOV AX,[BP]+5;
 MOV BX,[BP+6H];
+
 ;Based indexed relative addressing mode
 MOV SI,1234H;
 MOV DI,0092H;
 MOV AX,[BX][SI]+5H;
+
 ;Indexed relative addressing mode 
 MOV DX,[DI]+5H;               
 
