@@ -1,5 +1,5 @@
 # Programming
-C++ programming codes🧑‍💻
+Computer programming codes🧑‍💻
 
 This repository involves assingment programs at LNJN NICFS NFSU Delhi Campus🏫🎒
 
