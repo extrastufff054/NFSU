@@ -24,7 +24,7 @@ INC AL;
 MOV [BX], AL;
 INC BX;
 LOOP L2;
-
+   
 
 
 
