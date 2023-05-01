@@ -1,0 +1,14 @@
+Implement basic commands of linux (atleast 10)
+Implement process related system call (FORK system call -> How it works)
+Implementation of FCFS
+Implement SJF and SRTF (Both in one)
+Implement priority scheduling and round robin scheduling (two different prgms)
+Implement LJF and LRTF
+Implement Bankers algorithm to avoid deadlock
+
+
+Structure of Lab-record :-
+
+Aim, Pseudocode/Syntax/Algo, Input and Ouput(Screenshot) -> if possible flowchart
+
+//Can create it digitally -> submit a printout
