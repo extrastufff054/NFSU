@@ -1,0 +1,40 @@
+Implement basic commands of linux (atleast 10)
+Implement process related system call (FORK system call -> How it works)
+Implementation of FCFS
+Implement SJF and SRTF (Both in one)
+Implement priority scheduling and round robin scheduling (two different prgms)
+Implement LJF and LRTF
+Implement Bankers algorithm to avoid deadlock
+
+
+
+
+Implementation of Basic Linux commands :
+
+1) sudo :- sudo allows a permitted user to execute a command as the superuser or another user, as specified by the security policy.  
+	   The invoking user's real (not effective) user-ID is used to determine the user name with which to query the security policy.
+	   sudo allows a permitted user to execute a command as the superuser or another user, as specified by the security policy.  The invoking user's real (not effective) user-ID is used       to determine the user name with which to query the security policy.
+	   
+2) mkdir :-Create the DIRECTORY(ies), if they do not already exist.
+
+
+3) ls :- List  information  about  the files (the current directory by default).
+       Sort entries alphabetically if none of -cftuvSUX nor --sort  is  specified.
+       
+4) cd :- Change directory, allows user to change to existing directory
+	Note :- cd .. -> Allows to go back a directory
+		cd ~ -> Allows user to hop back to the home directory
+		
+5) pwd :- Print working directory, is a shell builtin command that prints the current location. The output shows an absolute directory path, starting with the root directory (/).
+
+6) cat :- The cat command (concatenate) displays the contents of a file in the terminal (standard output or stdout). To use the command, provide a file name from the current directory
+
+7) touch :- The touch command's primary purpose is to modify an existing file's timestamp. 
+
+8) cp :- The main way to copy files and directories in Linux is through the cp (copy) command
+	Syntax : cp <filename><destination file>
+	
+9) rmdir :- Remove directory, is used to delete empty directory
+
+10) rm :- Remove, this command is used in order to delete files or directories
+
