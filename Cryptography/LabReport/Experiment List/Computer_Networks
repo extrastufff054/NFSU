@@ -1,0 +1,5 @@
+Given the CIDR representation 20.10.30.35/27 find the range of IP addr in CIDR block
+
+Exponential Backup Algorithm
+
+Consider a 100 mbps link between a earth and a satellite at an altitude of 2100 km , the signal propagates 3 x 10^3 metre/s. The time taken in milisec for for reciever to completely recieve a packet of 1000bytes transmitted by sender
