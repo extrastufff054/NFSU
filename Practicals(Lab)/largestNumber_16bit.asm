@@ -12,7 +12,7 @@
         MOV BX, 1000H;
         MOV CX, 0A4H;
         
-ARRAY : MOV [BX], AL;
+ARRAY : MOV [BX], AX;
         ADD AX, 50D;
         INC BX;
         LOOP ARRAY;
