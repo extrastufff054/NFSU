@@ -1,0 +1,4 @@
+Write a program to find out the largest number from a given unordered array of 8 bit numbers stored in locations starting from a known address
+Repeat it for 16 bit numbers
+Write a program to find out the number of even and odd numbers from a array of series of 16 bit hexadecimal numvers
+Write a program to find out the number of positive numbers and negative numbers from a given series of signed numbers
