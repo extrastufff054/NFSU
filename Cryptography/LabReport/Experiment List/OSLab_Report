@@ -5,6 +5,11 @@ Implement SJF and SRTF (Both in one)
 Implement priority scheduling and round robin scheduling (two different prgms)
 Implement LJF and LRTF
 Implement Bankers algorithm to avoid deadlock
+Process synchronisation 
+  Producer consumer
+  Reader writer
+  Dining philosopher
+  Printer Spooler 
 
 
 Structure of Lab-record :-
