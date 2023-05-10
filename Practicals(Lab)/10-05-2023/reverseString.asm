@@ -25,4 +25,4 @@ L1 :MOV AL,[SI];
     CMP CL,CH;
     JG L1;
     .EXIT 
-    END
+    END           
