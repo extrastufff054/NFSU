@@ -12,7 +12,7 @@ ARRAY1 DB 01H,02H,03H,04H,05H,06H,07H,08H,09H,0AH,0BH,0CH,0DH,0EH,0FH;
     MOV CL, 0FH;
     MOV CH, 00H;
     MOV DI, SI;
-    MOV DI, 0EH;
+    ADD DI, 0EH;
     
 L1 :MOV AL,[SI];
     MOV BL,[DI];
@@ -25,5 +25,4 @@ L1 :MOV AL,[SI];
     CMP CL,CH;
     JG L1;
     .EXIT 
-    
     END
