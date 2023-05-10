@@ -1,0 +1,9 @@
+write a program to reverse the given string and store at same location
+write a program using the loop instruction with indirect addressing that copies a string from source to target recurring the charcter order in the process
+
+repeat 2 by using string manipulation instructions
+
+use loop and string manipulation instructions
+
+
+ajith kumar chaturvedi - iit kanpur director
