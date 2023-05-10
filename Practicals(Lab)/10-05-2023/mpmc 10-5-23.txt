@@ -1,9 +1,14 @@
-write a program to reverse the given string and store at same location
-write a program using the loop instruction with indirect addressing that copies a string from source to target recurring the charcter order in the process
+1) write a program to reverse the given string and store at same    location
+2)write a program using the loop instruction with indirect addressing that copies a string from source to target recurring the charcter order in the process
 
-repeat 2 by using string manipulation instructions
+3)repeat 2 by using string manipulation instructions
 
 use loop and string manipulation instructions
 
 
 ajith kumar chaturvedi - iit kanpur director
+
+
+The .DATA section is used to define variables, constants, and arrays that are used in the program. It is located in the data segment of memory and is used to reserve space for data that will be initialized at the start of the program. Data defined in the .DATA section can be accessed using memory addresses, and can be read from or written to by the program.
+
+The .CODE section is used to define the instructions that make up the program's executable code. It is located in the code segment of memory and is used to store the instructions that the processor will execute when the program is run. Code defined in the .CODE section cannot be changed by the program at runtime, and can only be executed.
