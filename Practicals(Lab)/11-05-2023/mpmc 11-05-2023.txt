@@ -1,0 +1,27 @@
+1) Write a program that find the number of 1's in a byte (i.e in the binary equivalent of a number)
+	Rotate left/right through carry -> RCL/ROL -> RCL rotate through C, C is transferred to MSB and LSB = 0 
+	Loop runs until 8 times
+
+2) Write a program to count the no. of ones in a word(16 bytes) and provide the count in BCD
+	Loop runs until 16 times                  
+	If after every summation there is 1 then increment
+	DAA -> Decimal adjust after addition-> converts to a valid a bcd num
+
+3) Decide whether the parity of given nos. is even or odd if parity is even set DL=0 else DL=1
+   The given number maybe a multi byte number
+	(4 bytes) DB,DW -> define a 4 byte word
+	2 loops -> byte selection and bit selection
+	If parity even -> set DL=00 -> LSB =00 then DL=00
+
+4) Write a program to add two multi byte nos. and store the result as a third number
+   The nos. are stored in the form of byte list stored with the lowest byte first
+	Eg : 6 byte no. 70 50 7A 7B 7C 50 H
+	Store 70 at some location x
+	50 at x+1
+	7A at x+2
+	and so on..
+	
+	simlarly 50 at y (the last number)
+	7C at y+1 and so on..
+
+	Process : 
