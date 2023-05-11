@@ -1,3 +1,5 @@
+; Write a program that find the number of 1's in a byte (i.e in the binary equivalent of a number)
+
 MOV CX, 8 ;initialize loop counter to 8
 MOV BL, byte_to_count ;load byte to count into BL
 MOV AH, 0 ;initialize count to 0
