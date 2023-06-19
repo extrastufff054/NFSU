@@ -1,0 +1,2 @@
+To configure a network topology constitutes routers and switches using packet tracer
+To verify and configure VLAN and VLAN trunck in packet tracer
