@@ -1,0 +1,8 @@
+1) To configure a network topology constitutes routers and switches using packet tracer
+2) To verify and configure VLAN and VLAN trunck in packet tracer
+ -> What command is used to create a VLAN => vlan (name) in config.terminal
+ -> What command is used to select a port in the switch? => fa0/n (n=port number)
+ -> What command is used to assign a port to the VLAN ? => switchport access vlan n (n=vlan number)
+
+3) To get the MAC or physical addr of the system using ARP
+	arp -a => Allows to check for all the ARP entries
