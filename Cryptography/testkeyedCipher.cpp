@@ -1,62 +1,116 @@
 #include <iostream>
 #include <string>
-#include <vector>
 #include <algorithm>
 
 using namespace std;
 
-// Function to encrypt the message using keyed transposition cipher
+// Function to encrypt a message using a keyed transposition cipher
 string keyedTranspositionCipher(string message, string key)
 {
-    // Remove spaces and convert to lowercase
-    message.erase(remove_if(message.begin(), message.end(), ::isspace), message.end());
-    transform(message.begin(), message.end(), message.begin(), ::tolower);
+    // Remove spaces and non-alphabetic characters from the message
+    message.erase(remove_if(message.begin(), message.end(), [](char c) { return !isalpha(c); }), message.end());
 
-    // Create a vector of pairs to store the message and its corresponding index
-    vector<pair<char, int>> messageVector;
-    for (int i = 0; i < message.size(); i++)
+    // Calculate the number of columns in the transposition grid
+    int numCols = key.length();
+
+    // Calculate the number of rows in the transposition grid
+    int numRows = (message.length() + numCols - 1) / numCols;
+
+    // Pad the message with random characters to fill the grid
+    int numPadChars = numRows * numCols - message.length();
+    for (int i = 0; i < numPadChars; i++)
     {
-        messageVector.push_back(make_pair(message[i], i));
+        message += rand() % 26 + 'A';
     }
 
-    // Sort the vector based on the key
-    sort(messageVector.begin(), messageVector.end(), [key](pair<char, int> a, pair<char, int> b) {
-        return key.find(a.first) < key.find(b.first);
-    });
-
-    // Create a new string with the sorted message
-    string sortedMessage;
-    for (int i = 0; i < messageVector.size(); i++)
+    // Create the transposition grid
+    char grid[numRows][numCols];
+    int index = 0;
+    for (char c : key)
     {
-        sortedMessage += messageVector[i].first;
+        int col = index++;
+        for (int row = 0; row < numRows; row++)
+        {
+            grid[row][col] = c;
+        }
     }
 
-    return sortedMessage;
+    // Fill the transposition grid with the message
+    index = 0;
+    for (int col = 0; col < numCols; col++)
+    {
+        int keyIndex = key.find_first_of(key[col]);
+        if (keyIndex == col)
+        {
+            for (int row = 0; row < numRows; row++)
+            {
+                grid[row][col] = message[index++];
+            }
+        }
+    }
+
+    // Read the encrypted message from the transposition grid
+    string encryptedMessage;
+    for (int row = 0; row < numRows; row++)
+    {
+        for (int col = 0; col < numCols; col++)
+        {
+            encryptedMessage += grid[row][col];
+        }
+    }
+
+    return encryptedMessage;
 }
 
-// Function to decrypt the message using keyed transposition cipher
-string keyedTranspositionDecipher(string message, string key)
+// Function to decrypt a message using a keyed transposition cipher
+string keyedTranspositionDecipher(string encryptedMessage, string key)
 {
-    // Create a vector of pairs to store the message and its corresponding index
-    vector<pair<char, int>> messageVector;
-    for (int i = 0; i < message.size(); i++)
+    // Calculate the number of columns in the transposition grid
+    int numCols = key.length();
+
+    // Calculate the number of rows in the transposition grid
+    int numRows = encryptedMessage.length() / numCols;
+
+    // Create the transposition grid
+    char grid[numRows][numCols];
+    int index = 0;
+    for (char c : key)
     {
-        messageVector.push_back(make_pair(message[i], i));
+        int col = index++;
+        for (int row = 0; row < numRows; row++)
+        {
+            grid[row][col] = c;
+        }
     }
 
-    // Sort the vector based on the key
-    sort(messageVector.begin(), messageVector.end(), [key](pair<char, int> a, pair<char, int> b) {
-        return key.find(a.first) < key.find(b.first);
-    });
-
-    // Create a new string with the original message
-    string originalMessage(message.size(), ' ');
-    for (int i = 0; i < messageVector.size(); i++)
+    // Fill the transposition grid with the encrypted message
+    index = 0;
+    for (int col = 0; col < numCols; col++)
     {
-        originalMessage[messageVector[i].second] = messageVector[i].first;
+        int keyIndex = key.find_first_of(key[col]);
+        if (keyIndex == col)
+        {
+            for (int row = 0; row < numRows; row++)
+            {
+                grid[row][col] = encryptedMessage[index++];
+            }
+        }
     }
 
-    return originalMessage;
+    // Read the decrypted message from the transposition grid
+    string decryptedMessage;
+    for (int row = 0; row < numRows; row++)
+    {
+        for (int col = 0; col < numCols; col++)
+        {
+            decryptedMessage += grid[row][col];
+        }
+    }
+
+    // Remove any padding characters from the decrypted message
+    decryptedMessage.erase(remove_if(decryptedMessage.begin(), decryptedMessage.end(), [](char c) { return !isalpha(c); }), decryptedMessage.end());
+
+    return decryptedMessage;
 }
 
 int main()
